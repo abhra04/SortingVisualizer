@@ -5,6 +5,8 @@ from bubbleSort import *
 from quickSort import *
 from mergeSort import *
 from insertionSort import *
+from selectionSort import *
+from heapSort import *
 
 root = Tk()
 root.title('Sorting Algorithm Visualisation')
@@ -70,6 +72,12 @@ def startAlgorithm():
     elif menu.get() == 'Insertion Sort':
         insertionSort(arr,drawData, speed.get())
 
+    elif menu.get() == 'Selection Sort':
+        selectionSort(arr,drawData, speed.get())
+
+    elif menu.get() == 'Heap Sort':
+        heapSort(arr,drawData, speed.get())
+
 
 
 
@@ -102,7 +110,7 @@ UI_frame.grid(row=2, column=0, padx=0, pady=5)
 
 
 Label(UI_frame, text="Algorithm: ", bg='grey').grid(row=2, column=0, padx=5, pady=5)
-menu = ttk.Combobox(UI_frame, textvariable=selected_alg, values=['Bubble Sort', 'Merge Sort','Quick Sort','Insertion Sort'])
+menu = ttk.Combobox(UI_frame, textvariable=selected_alg, values=['Bubble Sort', 'Merge Sort','Quick Sort','Insertion Sort','Selection Sort','Heap Sort'])
 menu.grid(row=2, column=1, padx=5, pady=5)
 menu.current(0)
 Button(UI_frame, text="Start Sorting", command= startAlgorithm , bg='red').grid(row=2, column=2, padx=5, pady=5)
