@@ -19,7 +19,7 @@ arr  = []
 def drawData(data,colorArray):
     canvas.delete("all")
     if len(data)<=100:
-        c_height = 380
+        c_height = 500
         c_width = 1300
         x_width = c_width / (len(data) + 1)
         offset = 5
@@ -27,7 +27,7 @@ def drawData(data,colorArray):
         normalizedData = [ i / max(data) for i in data]
         for i, height in enumerate(normalizedData):
             x0 = i * x_width + offset + spacing
-            y0 = c_height - height * 340
+            y0 = c_height - height * 480
             x1 = (i + 1) * x_width + offset
             y1 = c_height
 
@@ -37,7 +37,7 @@ def drawData(data,colorArray):
 
         root.update_idletasks()
     else:
-        c_height = 380
+        c_height = 500
         c_width = 1300
         x_width = c_width / (len(data) + 1)
         offset = 5
@@ -45,7 +45,7 @@ def drawData(data,colorArray):
         normalizedData = [ i / max(data) for i in data]
         for i, height in enumerate(normalizedData):
             x0 = i * x_width + offset + spacing
-            y0 = c_height - height * 340
+            y0 = c_height - height * 480
             x1 = (i + 1) * x_width + offset
             y1 = c_height
 
@@ -102,7 +102,7 @@ def gen():
 
 selected_alg = ''
 
-canvas = Canvas(root, width=1310, height=350, bg='light blue')
+canvas = Canvas(root, width=1310, height=500, bg='light blue')
 canvas.grid(row=1, column=0, padx=2, pady=2)
 
 UI_frame = Frame(root, width= 1300, height=300, bg='pink')
